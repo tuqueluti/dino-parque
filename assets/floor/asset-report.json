@@ -1,0 +1,31 @@
+{
+  "source": "dino.fbx",
+  "sourceSha256": "da9a6b8bd6c20c8e8c4f47d768c3c3fd0f7a7f2e1ad6f1477001c9d7906c4cf7",
+  "sourceAnimations": 0,
+  "exportedPose": "static current FBX pose",
+  "triangles": 18776,
+  "heightMeters": 1.2,
+  "bounds": {
+    "min": [
+      -0.27007463574409485,
+      0,
+      -0.8264066576957703
+    ],
+    "max": [
+      0.27007463574409485,
+      1.2000000476837158,
+      0.8264066576957703
+    ]
+  },
+  "texture": {
+    "width": 1024,
+    "height": 1024
+  },
+  "anchoring": "horizontal plane",
+  "files": [
+    "sample-dino.glb",
+    "sample-dino.usdz",
+    "mystery-egg.glb",
+    "mystery-egg.usdz"
+  ]
+}

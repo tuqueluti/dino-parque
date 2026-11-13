@@ -1,0 +1,35 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0d2822"><title>AR no chão · Dino Parque</title><style>body{margin:0;background:radial-gradient(ellipse at top right,#2c5242,#0d2822 70%);color:#dbe8d0;font:16px/1.75 system-ui,sans-serif}header,main{max-width:800px;margin:auto;padding:22px}header{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid #d5e4bd33}a{color:#d6eab5}header a{text-decoration:none;font-size:14px}h1,h2,h3{font-family:Georgia,serif;color:#f0f4e7;font-weight:400;line-height:1.2}h1{font-size:42px}h2{font-size:30px;margin-top:45px}h3{font-size:23px}p,li{font-size:15px}li{margin:8px 0}code{font-size:13px;background:#d5e6c012;padding:2px 5px;border-radius:4px}pre{padding:20px;background:#051e18;border:1px solid #cfe3b831;border-radius:18px;overflow:auto;line-height:1.5}pre code{background:none;padding:0}.table-scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:14px}td,th{text-align:left;padding:12px;border-bottom:1px solid #d3e5b62a}th{color:#e9f2dc}footer{padding:35px 0;color:#adc7a7;font-size:12px}@media(max-width:500px){h1{font-size:34px}h2{font-size:27px}header,main{padding:19px}p,li{font-size:14px}}</style><header><a href="./">← Dino Parque</a></header><main><h1>Triceratops no chão: teste de realidade aumentada</h1>
+<p>O modelo de teste é o Triceratops enviado anteriormente, convertido do GLB original compactado. Ele tem 36 mil triângulos, texturas PBR, altura de 1 m e pés em Y=0. A fonte tem 180 mil triângulos e não contém animações. O sorteio dos filhotes continua usando o catálogo inteiro; o Triceratops é identificado como modelo de teste para a foto.</p>
+<h2>Como jogar e fotografar no iPhone</h2>
+<ul>
+<li>Abra o link no Safari e toque em <strong>Permitir e começar</strong>. Confirme câmera, movimento e localização. Os avisos sonoros começam ligados depois desse toque. A aventura abre automaticamente quando os pedidos terminam e a câmera está autorizada; você também pode continuar com os recursos disponíveis.</li>
+<li>Caminhe com o app visível. Na câmera, o primeiro ovo aparece até o 15º passo estimado pelos sensores. Sem sensor, 10 m válidos de GPS são usados como aproximação de caminhada. Os próximos encontros têm intervalos variáveis.</li>
+<li>Toque uma vez no ovo. Ele choca e salva um filhote sem exigir mapeamento do chão, download 3D ou novo toque. Abra <strong>Ficha e como cuidar</strong> para conhecer a descoberta.</li>
+<li>Escolha <strong>Fotografar no chão</strong>. Só então o modelo é preparado; você pode cancelar ou tentar novamente se o carregamento demorar.</li>
+<li>No iPhone, toque no botão <strong>Soltar Triceratops no chão e fotografar</strong>. No visualizador da Apple, escolha <strong>AR</strong>, aponte para uma área horizontal bem iluminada e mova o aparelho devagar até reconhecer a superfície. O modo <strong>Objeto</strong> é apenas inspeção do modelo: escolha <strong>AR</strong> para colocá-lo no ambiente.</li>
+<li>Posicione o Triceratops e use o obturador do visualizador. A foto é gerenciada pelo iPhone; ela não é importada automaticamente para o álbum web.</li>
+</ul>
+<p>Em <strong>Pets</strong>, um companheiro já acolhido oferece a mesma opção de foto. Nenhum modelo abre automaticamente ao iniciar o app ou por um link antigo de teste.</p>
+<h2>Rastreamento real</h2>
+<p>No iPhone, o caminho nativo usa AR Quick Look e ARKit, com USDZ marcado para superfície horizontal. O visualizador controla a detecção e a pose; a página web não recebe a pose do chão dele. Abrir o arquivo na aba Objeto não é mapear uma superfície.</p>
+<p>Em aparelhos com WebXR, <strong>Mapear chão e posicionar</strong> solicita uma sessão <code>immersive-ar</code> com <code>hit-test</code>. O círculo só aparece ao receber uma pose válida sobre superfície horizontal. Toque para colocar. A posição fica no espaço local rastreado, sem acompanhar a câmera. Se o rastreamento de câmera for perdido, o modelo fica oculto até retomar. <strong>Reposicionar no chão</strong> inicia uma nova busca.</p>
+<p>Sem um desses modos, o app informa a incompatibilidade e mantém o Triceratops oculto. Uma composição fixa sobre o vídeo não é oferecida como foto em AR. O nascimento e os cuidados continuam funcionando sem hardware AR.</p>
+<p>O mapeamento não é persistido entre sessões. Na sessão WebXR, a foto usa a captura de tela do próprio aparelho, porque o compositor nativo não disponibiliza os pixels da câmera a esta página.</p>
+<h2>Preparação dos arquivos</h2>
+<p>Execute <code>node scripts/prepare-floor-assets.mjs --triceratops</code>. A conversão usa ferramentas já instaladas, preserva UVs e gera:</p>
+<ul>
+<li><code>dist/assets/floor/triceratops.glb</code>: geometria e texturas para Three.js.</li>
+<li><code>dist/assets/floor/triceratops.usdz</code>: arquivo com ancoragem horizontal para Apple AR Quick Look.</li>
+<li><code>dist/assets/floor/triceratops-asset-report.json</code>: origem, hashes, dimensões, materiais e redução de geometria.</li>
+</ul>
+<p>Os arquivos USDZ são alinhados em 64 bytes e armazenados sem compressão ZIP. Se a hospedagem entrega tipo genérico, o app prepara um Blob <code>model/vnd.usdz+zip</code> e nome <code>.usdz</code> antes de habilitar o link nativo. Os modelos grandes ficam fora do pré-carregamento inicial.</p>
+<h2>Validação</h2>
+<p>Os testes automatizados verificam o primeiro encontro, passos e GPS sem pontos duplicados, eclosão sem plano, adoção única, carregamento tardio, cancelamento, arquivos reais, links nativos e poses WebXR simuladas. A estabilidade física, a câmera e o obturador precisam de teste em iPhone real; a automação de navegador não substitui esse teste.</p>
+<p>O documento fornecido por Luti orientou a separação entre captura do jogo, detecção de superfície horizontal e posição no mundo. Os exemplos Unity/AR Foundation do documento não são executáveis diretamente neste app web.</p>
+<h2>Fontes técnicas</h2>
+<ul>
+<li><a href="https://developer.apple.com/videos/play/wwdc2019/612/" target="_blank" rel="noopener">Apple: AR Quick Look e captura</a></li>
+<li><a href="https://webkit.org/blog/8421/viewing-augmented-reality-assets-in-safari-for-ios/" target="_blank" rel="noopener">WebKit: links AR e MIME de USDZ</a></li>
+<li><a href="https://immersive-web.github.io/hit-test/" target="_blank" rel="noopener">W3C: WebXR Hit Test</a></li>
+<li><a href="https://github.com/google/model-viewer/blob/master/packages/model-viewer/src/features/ar.ts" target="_blank" rel="noopener">model-viewer: preparação de Blob para AR Quick Look</a></li>
+</ul><footer>Dino Parque Belinzoni · Araranguá</footer></main></html>

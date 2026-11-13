@@ -1,0 +1,9 @@
+{
+  "edition": "dino-pets-v2",
+  "routeId": "trilha-do-parque",
+  "route": [],
+  "captureRadiusMeters": 18,
+  "alertRadiusMeters": 40,
+  "maxAccuracyMeters": 20,
+  "rotationMinutes": 30
+}

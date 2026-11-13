@@ -1,0 +1,82 @@
+{
+  "name": "Triceratops",
+  "source": "triceratops-model.glb.gz",
+  "sourceSha256": "fa9087162488607381fd21b213608ad26432f43e7fff54f8a1f63b64b8588620",
+  "sources": {
+    "triceratops-model.glb.gz": {
+      "bytes": 3374006,
+      "sha256": "fa9087162488607381fd21b213608ad26432f43e7fff54f8a1f63b64b8588620"
+    },
+    "triceratops-color.jpg": {
+      "bytes": 440578,
+      "sha256": "d9a1fccdff5608b278afcc3a7e16c74bbb581f02ddb397d74f6f2c65e86ffe1f"
+    },
+    "triceratops-normal.jpg": {
+      "bytes": 222530,
+      "sha256": "1d2526a5c7a48cc6714a89c84deab1c253598d1db6f48db9ffb3922b54099b73"
+    },
+    "triceratops-roughness.jpg": {
+      "bytes": 149454,
+      "sha256": "475e0af7c3559510cc85853dd85638b5c5cf61cc883cdde0473e74381c02d07d"
+    },
+    "triceratops-metallic.jpg": {
+      "bytes": 127017,
+      "sha256": "a2ae02f88e6862040d77f3a0e15a390c354e33ce1086d2cc3c24aec76ff639e7"
+    }
+  },
+  "sourceAnimations": 0,
+  "exportedAnimations": 1,
+  "animationClip": "Triceratops_Idle",
+  "animationDurationSeconds": 4,
+  "skeletonJoints": 13,
+  "exportedPose": "foca-tojima quadruped idle loop with Y=0 foot pinning",
+  "sourceTriangles": 180000,
+  "triangles": 30000,
+  "simplification": "Three.js SimplifyModifier / meshoptimizer, normal and UV weighted, target 36000 triangles",
+  "heightMeters": 1,
+  "bounds": {
+    "min": [
+      -0.9367800354957581,
+      0,
+      -0.33478569984436035
+    ],
+    "max": [
+      0.9367800354957581,
+      1,
+      0.33478569984436035
+    ]
+  },
+  "textures": {
+    "baseColor": {
+      "width": 1024,
+      "height": 1024,
+      "colorSpace": "sRGB",
+      "mime": "image/jpeg"
+    },
+    "normal": {
+      "width": 1024,
+      "height": 1024,
+      "colorSpace": "data",
+      "mime": "image/png"
+    },
+    "metallicRoughness": {
+      "width": 1024,
+      "height": 1024,
+      "colorSpace": "data",
+      "channels": "G=roughness, B=metallic",
+      "mime": "image/png"
+    }
+  },
+  "sourceUVConvention": "flipY=true retained from the supplied FBX-derived model",
+  "anchoring": "horizontal plane",
+  "files": {
+    "triceratops.glb": {
+      "bytes": 4952480,
+      "sha256": "c1de283fc96e0bed4e7ae10136c3b0deb6c319c7e05513a197628c0bd62762a7"
+    },
+    "triceratops.usdz": {
+      "bytes": 6958981,
+      "sha256": "935531ba8f9c1410e194786505118466cb0e9e6392dad4c86d7be15df3806f37"
+    }
+  }
+}

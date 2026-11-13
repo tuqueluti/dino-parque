@@ -1,0 +1,390 @@
+/*
+ * Dino Parque Belinzoni — Cohesive UI Assembly & Blueprint Build-In System
+ * Built on Foca Dev references:
+ *   1. transitions.dev / UI Generation (blueprint wireframe, corner handles, scanline reveal)
+ *   2. reactbits.dev / AnimatedContent & BlurText (staggered blur-focus & spring card cascades)
+ *   3. transitions.dev / Motion Tokens (_root.css, 18-texts-reveal, 07-panel-reveal, 06-modal)
+ */
+
+:root {
+  /* Canonical transitions.dev motion tokens */
+  --duration-stagger: 42ms;
+  --duration-micro: 80ms;
+  --duration-quick: 150ms;
+  --duration-fast: 250ms;
+  --duration-medium: 360ms;
+  --duration-slow: 430ms;
+  --duration-very-slow: 520ms;
+
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: ease-in-out;
+  --ease-out: ease-out;
+  --ease-bounce: cubic-bezier(0.34, 1.36, 0.64, 1);
+
+  --distance-micro: 4px;
+  --distance-base: 10px;
+  --distance-medium: 14px;
+  --distance-card: 18px;
+
+  --scale-large: 0.96;
+  --scale-medium: 0.968;
+  --scale-small: 0.985;
+
+  --blur-small: 2px;
+  --blur-medium: 3px;
+  --blur-text: 4px;
+
+  /* Belinzoni emerald-forest & pale-gold blueprint palette */
+  --gen-line: rgba(198, 226, 166, 0.74);
+  --gen-strong: #eadab1;
+  --gen-ink: rgba(189, 224, 159, 0.24);
+  --gen-surface: #102b21;
+  --gen-text: #eef4e5;
+  --gen-muted: #b6cab0;
+  --gen-dot: 2.05px;
+  --gen-font: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --tig-line: rgba(198, 226, 166, 0.74);
+  --tig-strong: #eadab1;
+  --tig-ink: rgba(189, 224, 159, 0.38);
+  --tig-surface: #102b21;
+  --tig-text: #eef4e5;
+  --tig-muted: #b6cab0;
+  --tig-dot: 2.05px;
+  --tig-font: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html.has-assembly-motion {
+  overflow-x: clip;
+}
+
+/* ── 1. Blueprint Wireframe Overlay (ui-generation.js & text-image-generation.js) ── */
+.t-gen,
+.t-tig {
+  position: absolute;
+  z-index: 2147483000;
+  pointer-events: none;
+}
+
+.t-gen-svg,
+.t-tig-svg,
+.t-tig-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: visible;
+}
+
+.t-gen-dot {
+  fill: var(--gen-ink);
+}
+.t-gen-dot.is-lit {
+  fill: var(--gen-strong);
+}
+.t-gen-wireframe {
+  stroke-width: var(--gen-dot);
+}
+.t-gen-wire {
+  fill: none;
+  stroke: var(--gen-line);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.t-gen-guide {
+  fill: none;
+  stroke: var(--gen-line);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+.t-gen-guide--dashed,
+.t-gen-guide--scan {
+  stroke-dasharray: 0 5;
+}
+.t-gen-head,
+.t-gen-flyer {
+  fill: var(--gen-strong);
+}
+.t-gen-handle {
+  fill: var(--gen-surface);
+  stroke: var(--gen-strong);
+  stroke-width: 1.1;
+}
+.t-gen-reticle {
+  fill: none;
+  stroke: var(--gen-strong);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+}
+.t-gen-glow-stop {
+  stop-color: var(--gen-strong);
+}
+.t-gen-label {
+  font-family: var(--gen-font);
+  font-size: 8.5px;
+  fill: var(--gen-line);
+  letter-spacing: 0.04em;
+}
+.t-gen-label--small {
+  font-size: 7.5px;
+  fill: var(--gen-strong);
+}
+.t-gen-label--tag {
+  font-size: 7.5px;
+  fill: var(--gen-strong);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.t-tig-wireframe {
+  stroke-width: var(--tig-dot);
+}
+.t-tig-sketch {
+  stroke-width: calc(var(--tig-dot) * 0.75);
+}
+.t-tig-wire {
+  fill: none;
+  stroke: var(--tig-line);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.t-tig-guide {
+  fill: none;
+  stroke: var(--tig-line);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+.t-tig-head,
+.t-tig-flyer {
+  fill: var(--tig-strong);
+}
+.t-tig-handle {
+  fill: var(--tig-surface);
+  stroke: var(--tig-strong);
+  stroke-width: 1.1;
+}
+.t-tig-reticle {
+  fill: none;
+  stroke: var(--tig-strong);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+}
+.t-tig-label {
+  font-family: var(--tig-font);
+  font-size: 8.5px;
+  fill: var(--tig-line);
+  letter-spacing: 0.04em;
+}
+.t-tig-label--small,
+.t-tig-label--tag {
+  font-size: 7.5px;
+  fill: var(--tig-strong);
+}
+
+/* ── 2. Staggered Element Assembly Choreography ([data-asm]) ── */
+html.has-assembly-motion [data-asm][data-asm-state="from"] {
+  opacity: 0;
+  will-change: transform, opacity, filter;
+}
+
+/* BlurText / 18-texts-reveal: soft focus rising into sharp typography */
+html.has-assembly-motion [data-asm="text"][data-asm-state="from"] {
+  transform: translate3d(0, var(--distance-medium), 0);
+  filter: blur(var(--blur-text));
+}
+html.has-assembly-motion [data-asm="text"][data-asm-state="in"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0px);
+  transition:
+    opacity var(--duration-very-slow) var(--ease-smooth-out) var(--asm-delay, 0ms),
+    transform var(--duration-very-slow) var(--ease-smooth-out) var(--asm-delay, 0ms),
+    filter var(--duration-very-slow) var(--ease-smooth-out) var(--asm-delay, 0ms);
+}
+
+/* AnimatedContent: glass cards, species tiles, sections & banners */
+html.has-assembly-motion [data-asm="card"][data-asm-state="from"] {
+  transform: translate3d(0, var(--distance-card), 0) scale(var(--scale-medium));
+  filter: blur(var(--blur-medium));
+}
+html.has-assembly-motion [data-asm="card"][data-asm-state="in"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0px);
+  transition:
+    opacity var(--duration-slow) var(--ease-smooth-out) var(--asm-delay, 0ms),
+    transform var(--duration-very-slow) var(--ease-smooth-out) var(--asm-delay, 0ms),
+    filter var(--duration-slow) var(--ease-smooth-out) var(--asm-delay, 0ms);
+}
+
+/* Tactile controls, shortcuts, care dock buttons, species pills */
+html.has-assembly-motion [data-asm="chip"][data-asm-state="from"] {
+  transform: translate3d(0, var(--distance-base), 0) scale(0.91);
+  filter: blur(var(--blur-small));
+}
+html.has-assembly-motion [data-asm="chip"][data-asm-state="in"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0px);
+  transition:
+    opacity var(--duration-medium) var(--ease-smooth-out) var(--asm-delay, 0ms),
+    transform var(--duration-slow) var(--ease-bounce) var(--asm-delay, 0ms),
+    filter var(--duration-medium) var(--ease-smooth-out) var(--asm-delay, 0ms);
+}
+
+/* 07-panel-reveal: detail sidebars, expandable field guides, rows */
+html.has-assembly-motion [data-asm="panel"][data-asm-state="from"] {
+  transform: translate3d(0, 15px, 0) scale(var(--scale-small));
+  filter: blur(var(--blur-small));
+}
+html.has-assembly-motion [data-asm="panel"][data-asm-state="in"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0px);
+  transition:
+    opacity var(--duration-slow) var(--ease-smooth-out) var(--asm-delay, 0ms),
+    transform var(--duration-slow) var(--ease-smooth-out) var(--asm-delay, 0ms),
+    filter var(--duration-slow) var(--ease-smooth-out) var(--asm-delay, 0ms);
+}
+
+/* Shell Topbar & Navigation Dock assembly */
+html.has-assembly-motion [data-asm="shell-top"][data-asm-state="from"] {
+  transform: translate3d(0, -12px, 0);
+  filter: blur(var(--blur-small));
+}
+html.has-assembly-motion [data-asm="shell-top"][data-asm-state="in"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0px);
+  transition:
+    opacity var(--duration-slow) var(--ease-smooth-out) var(--asm-delay, 0ms),
+    transform var(--duration-slow) var(--ease-smooth-out) var(--asm-delay, 0ms),
+    filter var(--duration-slow) var(--ease-smooth-out) var(--asm-delay, 0ms);
+}
+
+html.has-assembly-motion [data-asm="shell-dock"][data-asm-state="from"] {
+  transform: translate3d(0, 14px, 0) scale(0.88);
+}
+html.has-assembly-motion [data-asm="shell-dock"][data-asm-state="in"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  transition:
+    opacity var(--duration-medium) var(--ease-smooth-out) var(--asm-delay, 0ms),
+    transform var(--duration-slow) var(--ease-bounce) var(--asm-delay, 0ms);
+}
+
+/* Settled state clears compositing overrides so hover & backdrop-filter stay native */
+html.has-assembly-motion [data-asm][data-asm-state="settled"] {
+  opacity: 1;
+  will-change: auto;
+}
+
+/* ── 3. SVG Park Map Self-Drawing Trail & Station Pins (#mapa) ── */
+html.has-assembly-motion .park-map [data-asm="pin"][data-asm-state="from"] {
+  opacity: 0;
+}
+html.has-assembly-motion .park-map [data-asm="pin"][data-asm-state="from"] > circle,
+html.has-assembly-motion .park-map [data-asm="pin"][data-asm-state="from"] > text {
+  transform: scale(0.25);
+  transform-origin: 0 0;
+}
+html.has-assembly-motion .park-map [data-asm="pin"][data-asm-state="in"] {
+  opacity: 1;
+  transition: opacity var(--duration-medium) var(--ease-smooth-out) var(--asm-delay, 0ms);
+}
+html.has-assembly-motion .park-map [data-asm="pin"][data-asm-state="in"] > circle,
+html.has-assembly-motion .park-map [data-asm="pin"][data-asm-state="in"] > text {
+  transform: scale(1);
+  transform-origin: 0 0;
+  transition: transform var(--duration-very-slow) var(--ease-bounce) var(--asm-delay, 0ms);
+}
+html.has-assembly-motion .park-map [data-asm="pin"][data-asm-state="settled"] {
+  opacity: 1;
+}
+
+html.has-assembly-motion .park-map path[data-asm-trail="drawing"] {
+  transition:
+    stroke-dashoffset 1150ms var(--ease-smooth-out) var(--asm-delay, 60ms),
+    opacity var(--duration-slow) var(--ease-smooth-out) var(--asm-delay, 60ms);
+}
+
+/* ── 4. Nursery Need Meters & Floating Egg Pop-In ── */
+html.has-assembly-motion .pet-care-panel[data-asm-state="from"] progress,
+html.has-assembly-motion .pet-bond[data-asm-state="from"] progress {
+  clip-path: inset(0 100% 0 0);
+}
+html.has-assembly-motion .pet-care-panel[data-asm-state="in"] progress,
+html.has-assembly-motion .pet-bond[data-asm-state="in"] progress {
+  clip-path: inset(0 0% 0 0);
+  transition: clip-path 680ms var(--ease-smooth-out) calc(var(--asm-delay, 0ms) + 120ms);
+}
+
+@keyframes asm-floating-egg-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -38%) scale(0.72);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(0px);
+  }
+}
+html.has-assembly-motion .hunt-floating-egg {
+  animation: asm-floating-egg-in var(--duration-very-slow) var(--ease-bounce) backwards;
+}
+
+@keyframes asm-slide-swap {
+  from {
+    opacity: 0;
+    transform: translate3d(8px, 0, 0) scale(0.975);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0px);
+  }
+}
+html.has-assembly-motion .is-asm-swapping {
+  animation: asm-slide-swap var(--duration-medium) var(--ease-smooth-out) backwards;
+}
+
+/* ── 5. Modals & Field Guides (06-modal.md) ── */
+@keyframes asm-dialog-open {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0) scale(var(--scale-large));
+    filter: blur(var(--blur-small));
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0px);
+  }
+}
+html.has-assembly-motion dialog.detail-dialog[open],
+html.has-assembly-motion dialog.about-dialog[open],
+html.has-assembly-motion dialog.photo-dialog[open] {
+  animation: asm-dialog-open var(--duration-fast) var(--ease-smooth-out) backwards;
+}
+
+/* ── 6. Reduced Motion Accessibility Guard (Mandatory) ── */
+@media (prefers-reduced-motion: reduce) {
+  .t-gen,
+  .t-tig {
+    display: none !important;
+  }
+  html.has-assembly-motion [data-asm],
+  html.has-assembly-motion [data-asm][data-asm-state="from"],
+  html.has-assembly-motion [data-asm][data-asm-state="in"],
+  html.has-assembly-motion .park-map [data-asm="pin"][data-asm-state="from"] > circle,
+  html.has-assembly-motion .park-map [data-asm="pin"][data-asm-state="from"] > text {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

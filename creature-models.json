@@ -1,0 +1,515 @@
+{
+  "version": 2,
+  "pipeline": "glb+usdz",
+  "creatures": {
+    "trex": {
+      "name": "Tiranossauro Rex",
+      "url": "./assets/creatures/trex/adult.glb",
+      "usdzUrl": "./assets/creatures/trex/adult.usdz",
+      "stages": {
+        "baby": {
+          "url": "./assets/creatures/trex/baby.glb",
+          "usdzUrl": "./assets/creatures/trex/baby.usdz",
+          "scale": 0.44,
+          "clips": {
+            "idle": "idle"
+          }
+        },
+        "adult": {
+          "url": "./assets/creatures/trex/adult.glb",
+          "usdzUrl": "./assets/creatures/trex/adult.usdz",
+          "scale": 2.35,
+          "clips": {
+            "idle": "idle"
+          }
+        }
+      },
+      "clips": {
+        "idle": "idle"
+      }
+    },
+    "triceratops": {
+      "name": "Triceratops",
+      "url": "./assets/creatures/triceratops/adult.glb",
+      "usdzUrl": "./assets/creatures/triceratops/adult.usdz",
+      "stages": {
+        "baby": {
+          "url": "./assets/creatures/triceratops/baby.glb",
+          "usdzUrl": "./assets/creatures/triceratops/baby.usdz",
+          "scale": 0.44,
+          "clips": {
+            "idle": "idle"
+          }
+        },
+        "adult": {
+          "url": "./assets/creatures/triceratops/adult.glb",
+          "usdzUrl": "./assets/creatures/triceratops/adult.usdz",
+          "scale": 2.35,
+          "clips": {
+            "idle": "Triceratops_Idle"
+          }
+        }
+      },
+      "clips": {
+        "idle": "Triceratops_Idle"
+      }
+    },
+    "velociraptor": {
+      "name": "Velociraptor",
+      "url": "./assets/creatures/velociraptor/adult.glb",
+      "usdzUrl": "./assets/creatures/velociraptor/adult.usdz",
+      "stages": {
+        "baby": {
+          "url": "./assets/creatures/velociraptor/baby.glb",
+          "usdzUrl": "./assets/creatures/velociraptor/baby.usdz",
+          "scale": 0.44,
+          "clips": {
+            "idle": "idle"
+          }
+        },
+        "adult": {
+          "url": "./assets/creatures/velociraptor/adult.glb",
+          "usdzUrl": "./assets/creatures/velociraptor/adult.usdz",
+          "scale": 2.35,
+          "clips": {
+            "idle": "idle"
+          }
+        }
+      },
+      "clips": {
+        "idle": "idle"
+      }
+    },
+    "carnotaurus": {
+      "name": "Carnotaurus",
+      "url": "./assets/creatures/carnotaurus/adult.glb",
+      "usdzUrl": "./assets/creatures/carnotaurus/adult.usdz",
+      "stages": {
+        "baby": {
+          "url": "./assets/creatures/carnotaurus/baby.glb",
+          "usdzUrl": "./assets/creatures/carnotaurus/baby.usdz",
+          "scale": 0.44,
+          "clips": {
+            "idle": "idle"
+          }
+        },
+        "adult": {
+          "url": "./assets/creatures/carnotaurus/adult.glb",
+          "usdzUrl": "./assets/creatures/carnotaurus/adult.usdz",
+          "scale": 2.35,
+          "clips": {
+            "idle": "idle"
+          }
+        }
+      },
+      "clips": {
+        "idle": "idle"
+      }
+    },
+    "allosaurus": {
+      "name": "Allosaurus",
+      "url": "./assets/creatures/allosaurus/adult.glb",
+      "usdzUrl": "./assets/creatures/allosaurus/adult.usdz",
+      "stages": {
+        "baby": {
+          "url": "./assets/creatures/allosaurus/baby.glb",
+          "usdzUrl": "./assets/creatures/allosaurus/baby.usdz",
+          "scale": 0.44,
+          "clips": {
+            "idle": "idle"
+          }
+        },
+        "adult": {
+          "url": "./assets/creatures/allosaurus/adult.glb",
+          "usdzUrl": "./assets/creatures/allosaurus/adult.usdz",
+          "scale": 2.35,
+          "clips": {
+            "idle": "idle"
+          }
+        }
+      },
+      "clips": {
+        "idle": "idle"
+      }
+    },
+    "omeisaurus": {
+      "name": "Omeisaurus",
+      "url": "./assets/creatures/omeisaurus/adult.glb",
+      "usdzUrl": "./assets/creatures/omeisaurus/adult.usdz",
+      "stages": {
+        "baby": {
+          "url": "./assets/creatures/omeisaurus/baby.glb",
+          "usdzUrl": "./assets/creatures/omeisaurus/baby.usdz",
+          "scale": 0.44,
+          "clips": {
+            "idle": "idle"
+          }
+        },
+        "adult": {
+          "url": "./assets/creatures/omeisaurus/adult.glb",
+          "usdzUrl": "./assets/creatures/omeisaurus/adult.usdz",
+          "scale": 2.35,
+          "clips": {
+            "idle": "idle"
+          }
+        }
+      },
+      "clips": {
+        "idle": "idle"
+      }
+    },
+    "dilophosaurus": {
+      "name": "Dilophosaurus",
+      "url": "./assets/creatures/dilophosaurus/adult.glb",
+      "usdzUrl": "./assets/creatures/dilophosaurus/adult.usdz",
+      "stages": {
+        "baby": {
+          "url": "./assets/creatures/dilophosaurus/baby.glb",
+          "usdzUrl": "./assets/creatures/dilophosaurus/baby.usdz",
+          "scale": 0.44,
+          "clips": {
+            "idle": "idle"
+          }
+        },
+        "adult": {
+          "url": "./assets/creatures/dilophosaurus/adult.glb",
+          "usdzUrl": "./assets/creatures/dilophosaurus/adult.usdz",
+          "scale": 2.35,
+          "clips": {
+            "idle": "idle"
+          }
+        }
+      },
+      "clips": {
+        "idle": "idle"
+      }
+    },
+    "herrerasaurus": {
+      "name": "Herrerasaurus",
+      "url": "./assets/creatures/herrerasaurus/adult.glb",
+      "usdzUrl": "./assets/creatures/herrerasaurus/adult.usdz",
+      "stages": {
+        "baby": {
+          "url": "./assets/creatures/herrerasaurus/baby.glb",
+          "usdzUrl": "./assets/creatures/herrerasaurus/baby.usdz",
+          "scale": 0.44,
+          "clips": {
+            "idle": "idle"
+          }
+        },
+        "adult": {
+          "url": "./assets/creatures/herrerasaurus/adult.glb",
+          "usdzUrl": "./assets/creatures/herrerasaurus/adult.usdz",
+          "scale": 2.35,
+          "clips": {
+            "idle": "idle"
+          }
+        }
+      },
+      "clips": {
+        "idle": "idle"
+      }
+    },
+    "brachiosaurus": {
+      "name": "Brachiosaurus",
+      "url": "./assets/creatures/brachiosaurus/adult.glb",
+      "usdzUrl": "./assets/creatures/brachiosaurus/adult.usdz",
+      "stages": {
+        "baby": {
+          "url": "./assets/creatures/brachiosaurus/baby.glb",
+          "usdzUrl": "./assets/creatures/brachiosaurus/baby.usdz",
+          "scale": 0.44,
+          "clips": {
+            "idle": "idle"
+          }
+        },
+        "adult": {
+          "url": "./assets/creatures/brachiosaurus/adult.glb",
+          "usdzUrl": "./assets/creatures/brachiosaurus/adult.usdz",
+          "scale": 2.35,
+          "clips": {
+            "idle": "idle"
+          }
+        }
+      },
+      "clips": {
+        "idle": "idle"
+      }
+    },
+    "pteranodon": {
+      "name": "Pteranodon",
+      "url": "./assets/creatures/pteranodon/adult.glb",
+      "usdzUrl": "./assets/creatures/pteranodon/adult.usdz",
+      "stages": {
+        "baby": {
+          "url": "./assets/creatures/pteranodon/baby.glb",
+          "usdzUrl": "./assets/creatures/pteranodon/baby.usdz",
+          "scale": 0.44,
+          "clips": {
+            "idle": "idle"
+          }
+        },
+        "adult": {
+          "url": "./assets/creatures/pteranodon/adult.glb",
+          "usdzUrl": "./assets/creatures/pteranodon/adult.usdz",
+          "scale": 2.35,
+          "clips": {
+            "idle": "idle"
+          }
+        }
+      },
+      "clips": {
+        "idle": "idle"
+      }
+    },
+    "mammoth": {
+      "name": "Mamute",
+      "url": "./assets/creatures/mammoth/adult.glb",
+      "usdzUrl": "./assets/creatures/mammoth/adult.usdz",
+      "stages": {
+        "baby": {
+          "url": "./assets/creatures/mammoth/baby.glb",
+          "usdzUrl": "./assets/creatures/mammoth/baby.usdz",
+          "scale": 0.44,
+          "clips": {
+            "idle": "idle"
+          }
+        },
+        "adult": {
+          "url": "./assets/creatures/mammoth/adult.glb",
+          "usdzUrl": "./assets/creatures/mammoth/adult.usdz",
+          "scale": 2.35,
+          "clips": {
+            "idle": "idle"
+          }
+        }
+      },
+      "clips": {
+        "idle": "idle"
+      }
+    },
+    "smilodon": {
+      "name": "Smilodon",
+      "url": "./assets/creatures/smilodon/adult.glb",
+      "usdzUrl": "./assets/creatures/smilodon/adult.usdz",
+      "stages": {
+        "baby": {
+          "url": "./assets/creatures/smilodon/baby.glb",
+          "usdzUrl": "./assets/creatures/smilodon/baby.usdz",
+          "scale": 0.44,
+          "clips": {
+            "idle": "idle"
+          }
+        },
+        "adult": {
+          "url": "./assets/creatures/smilodon/adult.glb",
+          "usdzUrl": "./assets/creatures/smilodon/adult.usdz",
+          "scale": 2.35,
+          "clips": {
+            "idle": "idle"
+          }
+        }
+      },
+      "clips": {
+        "idle": "idle"
+      }
+    },
+    "megatherium": {
+      "name": "Megatherium",
+      "url": "./assets/creatures/megatherium/adult.glb",
+      "usdzUrl": "./assets/creatures/megatherium/adult.usdz",
+      "stages": {
+        "baby": {
+          "url": "./assets/creatures/megatherium/baby.glb",
+          "usdzUrl": "./assets/creatures/megatherium/baby.usdz",
+          "scale": 0.44,
+          "clips": {
+            "idle": "idle"
+          }
+        },
+        "adult": {
+          "url": "./assets/creatures/megatherium/adult.glb",
+          "usdzUrl": "./assets/creatures/megatherium/adult.usdz",
+          "scale": 2.35,
+          "clips": {
+            "idle": "idle"
+          }
+        }
+      },
+      "clips": {
+        "idle": "idle"
+      }
+    }
+  },
+  "models": {
+    "trex": {
+      "baby": "./assets/creatures/trex/baby.glb",
+      "adult": "./assets/creatures/trex/adult.glb",
+      "babyUsdz": "./assets/creatures/trex/baby.usdz",
+      "adultUsdz": "./assets/creatures/trex/adult.usdz",
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "eat": "eat",
+        "happy": "happy",
+        "sleep": "sleep"
+      }
+    },
+    "triceratops": {
+      "baby": "./assets/creatures/triceratops/baby.glb",
+      "adult": "./assets/creatures/triceratops/adult.glb",
+      "babyUsdz": "./assets/creatures/triceratops/baby.usdz",
+      "adultUsdz": "./assets/creatures/triceratops/adult.usdz",
+      "clips": {
+        "idle": "Triceratops_Idle",
+        "walk": "walk",
+        "eat": "eat",
+        "happy": "happy",
+        "sleep": "sleep"
+      }
+    },
+    "velociraptor": {
+      "baby": "./assets/creatures/velociraptor/baby.glb",
+      "adult": "./assets/creatures/velociraptor/adult.glb",
+      "babyUsdz": "./assets/creatures/velociraptor/baby.usdz",
+      "adultUsdz": "./assets/creatures/velociraptor/adult.usdz",
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "eat": "eat",
+        "happy": "happy",
+        "sleep": "sleep"
+      }
+    },
+    "carnotaurus": {
+      "baby": "./assets/creatures/carnotaurus/baby.glb",
+      "adult": "./assets/creatures/carnotaurus/adult.glb",
+      "babyUsdz": "./assets/creatures/carnotaurus/baby.usdz",
+      "adultUsdz": "./assets/creatures/carnotaurus/adult.usdz",
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "eat": "eat",
+        "happy": "happy",
+        "sleep": "sleep"
+      }
+    },
+    "allosaurus": {
+      "baby": "./assets/creatures/allosaurus/baby.glb",
+      "adult": "./assets/creatures/allosaurus/adult.glb",
+      "babyUsdz": "./assets/creatures/allosaurus/baby.usdz",
+      "adultUsdz": "./assets/creatures/allosaurus/adult.usdz",
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "eat": "eat",
+        "happy": "happy",
+        "sleep": "sleep"
+      }
+    },
+    "omeisaurus": {
+      "baby": "./assets/creatures/omeisaurus/baby.glb",
+      "adult": "./assets/creatures/omeisaurus/adult.glb",
+      "babyUsdz": "./assets/creatures/omeisaurus/baby.usdz",
+      "adultUsdz": "./assets/creatures/omeisaurus/adult.usdz",
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "eat": "eat",
+        "happy": "happy",
+        "sleep": "sleep"
+      }
+    },
+    "dilophosaurus": {
+      "baby": "./assets/creatures/dilophosaurus/baby.glb",
+      "adult": "./assets/creatures/dilophosaurus/adult.glb",
+      "babyUsdz": "./assets/creatures/dilophosaurus/baby.usdz",
+      "adultUsdz": "./assets/creatures/dilophosaurus/adult.usdz",
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "eat": "eat",
+        "happy": "happy",
+        "sleep": "sleep"
+      }
+    },
+    "herrerasaurus": {
+      "baby": "./assets/creatures/herrerasaurus/baby.glb",
+      "adult": "./assets/creatures/herrerasaurus/adult.glb",
+      "babyUsdz": "./assets/creatures/herrerasaurus/baby.usdz",
+      "adultUsdz": "./assets/creatures/herrerasaurus/adult.usdz",
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "eat": "eat",
+        "happy": "happy",
+        "sleep": "sleep"
+      }
+    },
+    "brachiosaurus": {
+      "baby": "./assets/creatures/brachiosaurus/baby.glb",
+      "adult": "./assets/creatures/brachiosaurus/adult.glb",
+      "babyUsdz": "./assets/creatures/brachiosaurus/baby.usdz",
+      "adultUsdz": "./assets/creatures/brachiosaurus/adult.usdz",
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "eat": "eat",
+        "happy": "happy",
+        "sleep": "sleep"
+      }
+    },
+    "pteranodon": {
+      "baby": "./assets/creatures/pteranodon/baby.glb",
+      "adult": "./assets/creatures/pteranodon/adult.glb",
+      "babyUsdz": "./assets/creatures/pteranodon/baby.usdz",
+      "adultUsdz": "./assets/creatures/pteranodon/adult.usdz",
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "eat": "eat",
+        "happy": "happy",
+        "sleep": "sleep"
+      }
+    },
+    "mammoth": {
+      "baby": "./assets/creatures/mammoth/baby.glb",
+      "adult": "./assets/creatures/mammoth/adult.glb",
+      "babyUsdz": "./assets/creatures/mammoth/baby.usdz",
+      "adultUsdz": "./assets/creatures/mammoth/adult.usdz",
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "eat": "eat",
+        "happy": "happy",
+        "sleep": "sleep"
+      }
+    },
+    "smilodon": {
+      "baby": "./assets/creatures/smilodon/baby.glb",
+      "adult": "./assets/creatures/smilodon/adult.glb",
+      "babyUsdz": "./assets/creatures/smilodon/baby.usdz",
+      "adultUsdz": "./assets/creatures/smilodon/adult.usdz",
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "eat": "eat",
+        "happy": "happy",
+        "sleep": "sleep"
+      }
+    },
+    "megatherium": {
+      "baby": "./assets/creatures/megatherium/baby.glb",
+      "adult": "./assets/creatures/megatherium/adult.glb",
+      "babyUsdz": "./assets/creatures/megatherium/baby.usdz",
+      "adultUsdz": "./assets/creatures/megatherium/adult.usdz",
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "eat": "eat",
+        "happy": "happy",
+        "sleep": "sleep"
+      }
+    }
+  }
+}

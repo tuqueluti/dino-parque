@@ -1,0 +1,15 @@
+{
+  "edition": "dino-ovos-v1",
+  "captureRadiusMeters": 15,
+  "maxAccuracyMeters": 20,
+  "eggs": {
+    "trex": null,
+    "triceratops": null,
+    "velociraptor": null,
+    "carnotaurus": null,
+    "allosaurus": null,
+    "omeisaurus": null,
+    "dilophosaurus": null,
+    "herrerasaurus": null
+  }
+}

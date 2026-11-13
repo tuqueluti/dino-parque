@@ -1,0 +1,205 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0d2822"><title>Galeria de Espécies (26 Espécies · Ovo, Filhote e Adulto) · Dino Parque</title><style>
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at top right,#264a3b,#0a201b 70%);color:#dbe8d0;font:15px/1.65 system-ui,-apple-system,sans-serif}
+header,main{max-width:1260px;margin:auto;padding:22px}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:15px;border-bottom:1px solid #d5e4bd28}
+a{color:#d6eab5}
+header a{text-decoration:none;font-size:14px;padding:8px 14px;border-radius:99px;background:#ffffff0d;border:1px solid #d5e4bd26}
+h1,h2,h3{font-family:Georgia,serif;color:#f4f8ec;font-weight:400;line-height:1.2;margin:0 0 10px}
+h1{font-size:38px;margin-top:10px}
+h2{font-size:26px;margin-top:28px}
+.eyebrow{display:inline-block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#c8dfa4;margin-bottom:6px}
+.hero-box{background:linear-gradient(145deg,#13362b,#0b231c);border:1px solid #d5e4bd2e;border-radius:24px;padding:26px;margin:18px 0 26px;box-shadow:0 18px 42px #00000045}
+.hero-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px;margin-top:18px}
+.stat-pill{background:#071914;border:1px solid #d5e4bd24;border-radius:16px;padding:12px 16px}
+.stat-pill small{display:block;font-size:11px;color:#a5c2a0;text-transform:uppercase;letter-spacing:.08em}
+.stat-pill strong{font-size:17px;color:#f2f7e8}
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:20px 0}
+.search-input{flex:1;min-width:240px;padding:12px 16px;border-radius:99px;border:1px solid #d5e4bd38;background:#071b15;color:#f0f6e8;font-size:15px}
+.species-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(540px,1fr));gap:20px}
+.species-card{background:#0c261e;border:1px solid #d5e4bd29;border-radius:22px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 12px 30px #00000035}
+.species-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;border-bottom:1px solid #d5e4bd1f;padding-bottom:10px}
+.species-head h3{font-size:23px;margin:0}
+.species-head em{color:#aec8a6;font-size:13px}
+.rig-badge{font-size:11px;padding:4px 10px;border-radius:99px;background:#d6eab51c;border:1px solid #d6eab540;color:#e6f4ce;white-space:nowrap}
+.pair-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stage-card{background:#071914;border:1px solid #d5e4bd22;border-radius:16px;padding:10px;display:flex;flex-direction:column;gap:8px}
+.stage-card img{width:100%;aspect-ratio:1/1;object-fit:contain;background:#dfe3de;border-radius:12px;border:1px solid #ffffff24}
+.stage-title{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:600;color:#e7f2d7}
+.stage-title span{font-size:10px;color:#9fc09a;font-weight:400}
+.onto-note{font-size:11.5px;color:#c5dac0;line-height:1.45;margin:0;min-height:54px}
+.btn-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+.btn{flex:1;text-align:center;text-decoration:none;padding:7px 8px;border-radius:10px;font-size:11.5px;font-weight:600;cursor:pointer;border:1px solid #d6eab545;background:#184133;color:#eff7e4}
+.btn.primary{background:#d4e8b2;color:#0b241c;border-color:#d4e8b2}
+.prompt-box{font-size:11px;background:#04120e;border:1px solid #d5e4bd1f;border-radius:10px;padding:8px;color:#b8d1b2;max-height:76px;overflow:auto;margin:0;font-family:ui-monospace,monospace}
+.tech-doc{margin-top:48px;background:#081d16;border:1px solid #d5e4bd24;border-radius:22px;padding:24px}
+footer{padding:40px 0;text-align:center;color:#9ab894;font-size:13px}
+@media(max-width:680px){.species-grid{grid-template-columns:1fr}.pair-grid{grid-template-columns:1fr}h1{font-size:28px}}
+</style></head><body>
+<header>
+  <a href="./#pets">← Voltar ao Berçário &amp; Santuário</a>
+  <div style="display:flex;gap:10px;flex-wrap:wrap">
+    <a href="./#especies">Catálogo do Parque</a>
+    <a href="./tripo-reference-pack.json" download="tripo-reference-pack.json">⬇ JSON Completo (78 Prompts + Oologia)</a>
+  </div>
+</header>
+<main>
+  <div class="hero-box">
+    <span class="eyebrow">ONTOLOGIA &amp; OOLOGIA PALEONTOLÓGICA · DINO PARQUE</span>
+    <h1>Galeria de Espécies: 26 Criaturas (Ovo, Filhote e Adulto)</h1>
+    <p>Todas as <strong>78 imagens em alta resolução (1024×1024 PNG)</strong> foram geradas com acabamento hiper-realista de escultura animatrônica de museu, fundo neutro uniforme (<code>#dfe3de</code>), <strong>100% das patas, caudas e cabeças visíveis dentro do quadro</strong>, diferenciação anatômica ontogenética entre <strong>Filhote</strong> e <strong>Adulto</strong>, e <strong>Oologia Paleontológica</strong> para cada <strong>Ovo</strong>.</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><small>Espécies do Parque</small><strong>26 Criaturas</strong></div>
+      <div class="stat-pill"><small>Imagens 1024×1024 PNG</small><strong>78 PNGs (Ovo + Filhote + Adulto)</strong></div>
+      <div class="stat-pill"><small>Enquadramento 3D</small><strong>100% Patas Visíveis · #dfe3de</strong></div>
+      <div class="stat-pill"><small>Alvo de Malha</small><strong>4k–8k (Ovo) · 12k–28k (Dino)</strong></div>
+    </div>
+  </div>
+  <div class="toolbar">
+    <input id="search" class="search-input" type="search" placeholder="Buscar espécie por nome, nome científico, oologia ou grupo (ex.: Tricerátops, T-Rex, Megaloolithus)...">
+    <span id="count-label" style="font-size:13px;color:#b8d2b1">Carregando 26 espécies (78 imagens)...</span>
+  </div>
+  <div id="grid" class="species-grid"></div>
+  <section class="tech-doc"><h1>Modelos 3D: filhote e adulto</h1>
+<p>O app já tem um cadastro para as 26 criaturas e suas três formas de referência (Ovo, Filhote e Adulto). O modo atual de câmera usa o FBX já enviado como modelo provisório de teste. Os avatares da coleção permanecem nas fichas e no berçário. Veja <a href="./ar-no-chao.html">RA-NO-CHAO.md</a>.</p>
+<h2>Arquivo recomendado</h2>
+<p>Entregue <strong>GLB, glTF 2.0</strong>, para o app. O contêiner pode reunir malha, materiais, texturas, esqueleto e animações em um arquivo. O Three.js já está conectado ao carregador GLTFLoader e ao AnimationMixer. Mantenha também o arquivo original do projeto para futuras revisões.</p>
+<p>FBX pode ser recebido como fonte para preparação, rig e conversão, mas não é o formato deste novo cadastro em tempo de execução. Não é necessário converter os arquivos antigos já usados pela câmera de fotografias nesta etapa. Prefira a exportação em GLB quando disponível. Se houver apenas FBX ou outro formato, faremos a conversão e a conferência antes de publicar.</p>
+<p>O formato por si só não determina o custo de tokens. O que reduz retrabalho é entregar arquivos organizados, nomes estáveis, uma prévia por modelo e uma ficha curta com escala, orientação e animações. O tamanho do modelo afeta principalmente download, memória e desempenho no celular.</p>
+<h2>Pacote de cada criatura</h2>
+<p>Use o identificador do cadastro, por exemplo <code>trex</code>, <code>triceratops</code>, <code>velociraptor</code> ou <code>mammoth</code>. A relação completa está em <code>dist/creature-models.json</code>.</p>
+<pre><code>trex/
+  baby.glb
+  adult.glb
+  preview-baby.jpg
+  preview-adult.jpg
+  entrega.txt</code></pre>
+<p>Em <code>entrega.txt</code>, informe versão, tamanho em metros, quantidade aproximada de triângulos, texturas, existência de esqueleto, nomes dos clipes e origem/licença dos materiais. O filhote e o adulto são modelos separados, ainda que compartilhem o mesmo esqueleto.</p>
+<h2>Metas de desempenho deste projeto</h2>
+<p>Estas são metas de produção do app:</p>
+<ul>
+<li>Alvo de 10 a 30 mil triângulos por forma; reduzir mais quando a silhueta permitir.</li>
+<li>Texturas de 1.024 × 1.024 como primeira opção; usar 2K somente se a melhora justificar o custo.</li>
+<li>Um conjunto simples de materiais PBR, sem texturas ou arquivos externos perdidos.</li>
+<li>Alvo de 2 a 5 MB por GLB; revisar arquivos acima de 8 MB antes de integrar.</li>
+<li>Pés no chão, origem coerente, escala em metros e transformações aplicadas.</li>
+<li>Testar malha, materiais e esqueleto no iPhone antes de ampliar o lote.</li>
+</ul>
+<p>O visualizador atual enquadra automaticamente o modelo. A escala de exibição é uma composição sobre a câmera, não uma medição física do dinossauro no ambiente. O carregamento é por demanda; o app não baixa todos os 54 modelos ao abrir.</p>
+<h2>Animações da etapa seguinte</h2>
+<p>Os nomes esperados são:</p>
+<div class="table-scroll"><table><tr><th>Clipe</th><th>Uso</th></tr><tr><td><code>idle</code></td><td>Respirar e esperar</td></tr><tr><td><code>walk</code></td><td>Caminhar no lugar durante o passeio</td></tr><tr><td><code>eat</code></td><td>Comer</td></tr><tr><td><code>happy</code></td><td>Reagir ao carinho ou à brincadeira</td></tr><tr><td><code>sleep</code></td><td>Dormir</td></tr></table></div>
+<p>Uma malha estática não ganha movimentos articulados apenas por ser exportada em GLB. Vamos conferir a topologia, montar ou corrigir o rig, pintar os pesos e produzir/ajustar os clipes. Quadrúpedes, bípedes, animais de pescoço longo e pterossauros podem precisar de rigs diferentes. Testaremos primeiro uma criatura e suas duas formas, depois repetiremos o processo aprovado.</p>
+<p>O código já consegue carregar os clipes existentes e reproduzir <code>idle</code>. A ligação dos outros movimentos às ações de comer, passear e dormir será concluída junto com os clipes finais e sua validação.</p>
+<h2>Como cadastrar depois</h2>
+<p>Coloque os arquivos em <code>dist/assets/creatures/&lt;id&gt;/</code>. Em <code>dist/creature-models.json</code>, altere os caminhos nulos da espécie:</p>
+<pre><code>{
+  &quot;baby&quot;: &quot;./assets/creatures/trex/baby.glb&quot;,
+  &quot;adult&quot;: &quot;./assets/creatures/trex/adult.glb&quot;,
+  &quot;clips&quot;: {
+    &quot;idle&quot;: &quot;idle&quot;,
+    &quot;walk&quot;: &quot;walk&quot;,
+    &quot;eat&quot;: &quot;eat&quot;,
+    &quot;happy&quot;: &quot;happy&quot;,
+    &quot;sleep&quot;: &quot;sleep&quot;
+  }
+}</code></pre>
+<p>O cadastro aceita arquivos GLB locais dentro da pasta da própria criatura. Ausência ou falha do modelo mantém o avatar ilustrativo. Os decodificadores Draco/KTX2/Meshopt ainda não estão ligados: para a primeira integração, entregue GLB comum. Podemos acrescentar compressão depois, junto com os decodificadores e testes do dispositivo.</p>
+<p>O auxiliar <code>loadCreatureAsset</code> escolhe filhote/adulto. <code>startCreatureAnimation</code> permite selecionar os clipes e liberar o mixer ao fechar a câmera. O modo de teste de chão está temporariamente ligado ao FBX fornecido. Ao integrar os modelos finais, o cadastro e o carregador serão ligados novamente à seleção por espécie; o iPhone também precisará dos USDZ correspondentes.</p>
+<h2>Fontes técnicas consultadas</h2>
+<ul>
+<li><a href="https://www.khronos.org/gltf/" target="_blank" rel="noopener">Khronos: glTF para transmissão e carregamento de modelos</a></li>
+<li><a href="https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html" target="_blank" rel="noopener">Khronos: especificação glTF 2.0 e contêiner GLB</a></li>
+<li><a href="https://threejs.org/docs/pages/GLTFLoader.html" target="_blank" rel="noopener">Three.js: GLTFLoader e animações importadas</a></li>
+<li><a href="https://threejs.org/docs/pages/AnimationMixer.html" target="_blank" rel="noopener">Three.js: AnimationMixer</a></li>
+</ul>
+<p>Consulte também <a href="./como-jogar.html">COMO-O-JOGO-FUNCIONA.md</a> para o fluxo de caça, pontos, loja e criação.</p></section>
+  <footer>Dino Parque Belinzoni · Araranguá · Oologia &amp; Ontogenia Paleontológica</footer>
+</main>
+<script>
+const grid = document.getElementById('grid');
+const search = document.getElementById('search');
+const countLabel = document.getElementById('count-label');
+let speciesList = [];
+
+function escapeHtml(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+function render(filter=''){
+  const q = filter.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  const filtered = speciesList.filter(sp => {
+    const hay = (sp.name+' '+sp.latin+' '+sp.group+' '+sp.id+' '+sp.rigTemplate+' '+(sp.eggOology||'')+' '+(sp.babyOntogeny||'')).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    return !q || hay.includes(q);
+  });
+  countLabel.textContent = filtered.length + ' espécies (' + (filtered.length * 3) + ' referências 1024×1024 PNG)';
+  grid.innerHTML = filtered.map(sp => `
+    <article class="species-card" id="${escapeHtml(sp.id)}">
+      <div class="species-head">
+        <div>
+          <span class="eyebrow">${escapeHtml(sp.group)}</span>
+          <h3>${escapeHtml(sp.name)}</h3>
+          <em>${escapeHtml(sp.latin)} · ID: <code>${escapeHtml(sp.id)}</code></em>
+        </div>
+        <span class="rig-badge">Rig: ${escapeHtml(sp.rigTemplate)}</span>
+      </div>
+      <div class="pair-grid">
+        <div class="stage-card">
+          <div class="stage-title"><strong>OVO · EGG</strong><span>${escapeHtml(sp.eggPolyTarget||'4k–8k Quads')}</span></div>
+          <a href="${escapeHtml(sp.eggPng)}" target="_blank" rel="noopener"><img src="${escapeHtml(sp.eggWebp)}" alt="Ovo de ${escapeHtml(sp.name)}" loading="lazy"></a>
+          <p class="onto-note"><strong>Oologia:</strong> ${escapeHtml(sp.eggOology)}</p>
+          <div class="btn-row">
+            <a class="btn primary" href="${escapeHtml(sp.eggPng)}" download="${escapeHtml(sp.id)}-egg.png">⬇ PNG 1024</a>
+            <button type="button" class="btn" data-copy="${escapeHtml(sp.eggPrompt)}">Prompt</button>
+          </div>
+          <pre class="prompt-box">${escapeHtml(sp.eggPrompt)}</pre>
+        </div>
+        <div class="stage-card">
+          <div class="stage-title"><strong>FILHOTE · BABY</strong><span>${escapeHtml(sp.babyPolyTarget)}</span></div>
+          <a href="${escapeHtml(sp.babyPng)}" target="_blank" rel="noopener"><img src="${escapeHtml(sp.babyWebp)}" alt="${escapeHtml(sp.name)} Filhote" loading="lazy"></a>
+          <p class="onto-note"><strong>Ontogenia Juvenil:</strong> ${escapeHtml(sp.babyOntogeny)}</p>
+          <div class="btn-row">
+            <a class="btn primary" href="${escapeHtml(sp.babyPng)}" download="${escapeHtml(sp.id)}-baby.png">⬇ PNG 1024</a>
+            <button type="button" class="btn" data-copy="${escapeHtml(sp.babyPrompt)}">Prompt</button>
+          </div>
+          <pre class="prompt-box">${escapeHtml(sp.babyPrompt)}</pre>
+        </div>
+        <div class="stage-card">
+          <div class="stage-title"><strong>ADULTO · ADULT</strong><span>${escapeHtml(sp.adultPolyTarget)}</span></div>
+          <a href="${escapeHtml(sp.adultPng)}" target="_blank" rel="noopener"><img src="${escapeHtml(sp.adultWebp)}" alt="${escapeHtml(sp.name)} Adulto" loading="lazy"></a>
+          <p class="onto-note"><strong>Anatomia Adulta:</strong> ${escapeHtml(sp.adultMorphology)}</p>
+          <div class="btn-row">
+            <a class="btn primary" href="${escapeHtml(sp.adultPng)}" download="${escapeHtml(sp.id)}-adult.png">⬇ PNG 1024</a>
+            <button type="button" class="btn" data-copy="${escapeHtml(sp.adultPrompt)}">Prompt</button>
+          </div>
+          <pre class="prompt-box">${escapeHtml(sp.adultPrompt)}</pre>
+        </div>
+      </div>
+      <div style="font-size:11px;color:#9dc097;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px">
+        <span>Destino GLB: <code>${escapeHtml(sp.targetEggGlb)}</code> · <code>${escapeHtml(sp.targetBabyGlb)}</code> · <code>${escapeHtml(sp.targetAdultGlb)}</code></span>
+        <span>${escapeHtml(sp.pivotRule)}</span>
+      </div>
+    </article>
+  `).join('');
+}
+
+grid.addEventListener('click', e => {
+  const btn = e.target.closest('[data-copy]');
+  if (!btn) return;
+  navigator.clipboard?.writeText(btn.getAttribute('data-copy'));
+  const orig = btn.textContent;
+  btn.textContent = '✓ Copiado!';
+  setTimeout(() => { btn.textContent = orig; }, 1600);
+});
+
+search.addEventListener('input', () => render(search.value));
+
+fetch('./tripo-reference-pack.json')
+  .then(r => r.json())
+  .then(data => {
+    speciesList = data.species || [];
+    render(search.value);
+    if (location.hash) {
+      const target = document.getElementById(location.hash.slice(1));
+      if (target) setTimeout(() => target.scrollIntoView({behavior:'smooth', block:'start'}), 120);
+    }
+  });
+</script></body></html>
